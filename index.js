@@ -16,7 +16,7 @@ sequelize
     console.error('Unable to connect to the database:', err);
   });
 
-  const { Department, Employee, Role, EmployeeDepartment, EmployeeRole } = require('./models');
+const { Department, Employee, Role, EmployeeDepartment, EmployeeRole } = require('./models');
 const { getEmployeeWithAssociations } = require('./controlleres/helperFunction');
 
 app.get("/",(req,res)=>{
