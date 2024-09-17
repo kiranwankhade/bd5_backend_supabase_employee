@@ -16,7 +16,7 @@ sequelize
     console.error('Unable to connect to the database:', err);
   });
 
-const { Department, Employee, Role, EmployeeDepartment, EmployeeRole } = require('./models');
+const { Employee, EmployeeDepartment, EmployeeRole } = require('./models');
 const { getEmployeeWithAssociations } = require('./controlleres/helperFunction');
 
 app.get("/",(req,res)=>{
@@ -95,10 +95,8 @@ app.get("/employees/sort-by-name", async (req, res) => {
 
 // Endpoint to add a new employee and associate with departments and roles
 app.post("/employees/new", async (req, res) => {
-  console.log('req.body:', req.body)
 
   const { name, email, departmentId, roleId } = req.body;
-  
 
   const employeeData = await Employee.create({ name, email });
 
