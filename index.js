@@ -15,6 +15,7 @@ sequelize
   .catch((err) => {
     console.error('Unable to connect to the database:', err);
   });
+sequelize.sync();
 
 const { Employee, EmployeeDepartment, EmployeeRole } = require('./models');
 const { getEmployeeWithAssociations } = require('./controlleres/helperFunction');
